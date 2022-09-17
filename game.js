@@ -4,6 +4,7 @@ window.onload = () => {
 
     let status = 0;
 
+
     document.getElementById("start").addEventListener("click", reset);
 
     function reset() {
@@ -14,6 +15,7 @@ window.onload = () => {
         document.getElementById("status").innerHTML = "Begin by moving your mouse over the S.";
         status = 0;
     }
+
 
     document.getElementById("end").addEventListener("mousemove", endmove, false);
 
@@ -28,8 +30,10 @@ window.onload = () => {
     }
 
 
-    document.getElementById("boundary1").addEventListener("mousemove", boundarymove, false);
+    for (let i = 0; i < element.length; i++) {
+        element[i].addEventListener("mousemove", boundarymove, false);
 
+    }
 
     function boundarymove() {
 
@@ -40,6 +44,7 @@ window.onload = () => {
         document.getElementById("status").innerHTML = "You Lose :(";
         status = 0;
     }
+
 
 
 }
