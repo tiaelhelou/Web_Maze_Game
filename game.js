@@ -5,6 +5,16 @@ window.onload = () => {
     let status = 0;
 
 
+    document.getElementById("start").addEventListener("mousemove", start, false);
+
+    function start() {
+
+        if(status == 0){
+            status = 1;
+        }
+       
+    }
+
     document.getElementById("start").addEventListener("click", reset);
 
     function reset() {
