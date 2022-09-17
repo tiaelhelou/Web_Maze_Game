@@ -3,7 +3,7 @@ window.onload = () => {
     const element = document.getElementsByClassName("boundary");
 
     let status = 0;
- 
+
     document.getElementById("start").addEventListener("click", reset);
 
     function reset() {
@@ -20,11 +20,26 @@ window.onload = () => {
     function endmove() {
 
         if (status == 1) {
-      
+
             document.getElementById("status").innerHTML = "You Win :)";
 
         }
 
     }
+
+
+    document.getElementById("boundary1").addEventListener("mousemove", boundarymove, false);
+
+
+    function boundarymove() {
+
+        for (let i = 0; i < element.length; i++) {
+            element[i].style.background = "red";
+
+        }
+        document.getElementById("status").innerHTML = "You Lose :(";
+        status = 0;
+    }
+
 
 }
