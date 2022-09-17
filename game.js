@@ -3,7 +3,7 @@ window.onload = () => {
     const element = document.getElementsByClassName("boundary");
 
     let status = 0;
-
+    let end ;
 
     document.getElementById("start").addEventListener("mousemove", start, false);
 
@@ -11,6 +11,7 @@ window.onload = () => {
 
         if(status == 0){
             status = 1;
+            end = 0;
         }
        
     }
@@ -24,19 +25,7 @@ window.onload = () => {
         }
         document.getElementById("status").innerHTML = "Begin by moving your mouse over the S.";
         status = 0;
-    }
-
-
-    document.getElementById("end").addEventListener("mousemove", endmove, false);
-
-    function endmove() {
-
-        if (status == 1) {
-
-            document.getElementById("status").innerHTML = "You Win :)";
-
-        }
-
+        end = 0;
     }
 
 
@@ -47,14 +36,26 @@ window.onload = () => {
 
     function boundarymove() {
 
-        for (let i = 0; i < element.length; i++) {
-            element[i].style.background = "red";
+        if (end == 0) {
+            for (let i = 0; i < element.length; i++) {
+                element[i].style.background = "red";
 
+            }
+            document.getElementById("status").innerHTML = "You Lose :(";
+            status = 0;
+            end =1;
         }
-        document.getElementById("status").innerHTML = "You Lose :(";
-        status = 0;
     }
 
 
+    document.getElementById("end").addEventListener("mousemove", endmove, false);
+
+    function endmove() {
+        if (status == 1) {
+
+            document.getElementById("status").innerHTML = "You Win :)";
+            end = 1;
+        }
+    }
 
 }
