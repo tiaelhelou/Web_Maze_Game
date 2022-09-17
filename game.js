@@ -12,4 +12,12 @@ window.onload = () => {
         document.getElementById("status").innerHTML = "Begin by moving your mouse over the S.";
     }
 
+    document.getElementById("end").addEventListener("mousemove", endmove, false);
+
+    function endmove() {
+      
+        document.getElementById("status").innerHTML = "You Win :)";
+
+    }
+
 }
