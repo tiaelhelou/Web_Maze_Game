@@ -2,6 +2,12 @@ window.onload = () => {
 
     const element = document.getElementsByClassName("boundary");
 
+    const name = prompt("Enter your name:");
+    const pass = prompt("Enter your pass:");
+
+    localStorage.setItem("Name", name);
+    localStorage.setItem("pass", pass);
+
     let status = 0;
     let end = 0;
     let startx = 0;
