@@ -7,8 +7,28 @@ window.onload = () => {
 
     const i = localStorage.length;
 
-    localStorage.setItem(i, name);
-    localStorage.setItem(i+1, pass);
+    let score = 0;
+    let user_key;
+
+    for(let x = 0; x < localStorage.length; x++){
+
+        if(localStorage.getItem(x) == name && localStorage.getItem(x+1) == pass){
+
+            score = localStorage.getItem(x+2);
+            document.getElementById("status").innerHTML = "Score: " + score;
+            user_key = x;
+
+        }
+        else{
+            localStorage.setItem(i, name);
+            localStorage.setItem(i+1, pass);
+            localStorage.setItem(i+2, score);
+            document.getElementById("status").innerHTML = "Score: " + score;
+            user_key = x;
+        }
+    }
+
+
 
     let status = 0;
     let end = 0;
@@ -67,9 +87,12 @@ window.onload = () => {
                 element[i].style.background = "red";
 
             }
-            document.getElementById("status").innerHTML = "You Lose :(";
+            score = score - 10;
+            document.getElementById("status").innerHTML = "You Lose :( Score: " + score;
             status = 0;
             end = 1;
+            score = score - 10;
+            localStorage.setItem(user_key+2, score);
         }
     }
 
@@ -77,10 +100,12 @@ window.onload = () => {
     document.getElementById("end").addEventListener("mousemove", endmove, false);
 
     function endmove() {
-        if (status == 1) {
+        if (status == 1 && end == 0) {
 
-            document.getElementById("status").innerHTML = "You Win :)";
+            score = score + 5;
+            document.getElementById("status").innerHTML = "You Win :) Score: " + score;
             end = 1;
+            localStorage.setItem(user_key+2, score);
         }
     }
 
