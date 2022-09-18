@@ -92,7 +92,6 @@ window.onload = () => {
             document.getElementById("status").innerHTML = "You Lose :( Score: " + score;
             status = 0;
             end = 1;
-            score = score - 10;
             localStorage.setItem(user_key+2, score);
         }
     }
