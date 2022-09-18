@@ -1,3 +1,14 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *                                                                                 *
+ * Name: Tia El Helou                                                              *
+ * Id: 202002154                                                                   *
+ * course: CSC43                                                                  *
+ * Date Last Modified: 4/19/2021                                                   *
+ * Program Description: Maze game                                                  *
+ * Associated files: game.html and game.css                                        *
+ *                                                                                 *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
 window.onload = () => {
 
     const element = document.getElementsByClassName("boundary");
