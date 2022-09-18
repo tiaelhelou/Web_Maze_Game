@@ -29,8 +29,6 @@ window.onload = () => {
         }
     }
 
-
-
     let status = 0;
     let end = 0;
     let startx = 0;
@@ -72,7 +70,7 @@ window.onload = () => {
         if (status == 1 && end == 0 && outbox < startx) {
             status = 0;
             end = 1;
-            document.getElementById("status").innerHTML = "Not Allowed! You lose :(";
+            document.getElementById("status").innerHTML = "Not Allowed!";
         }
 
     });
