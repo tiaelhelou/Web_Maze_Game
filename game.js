@@ -17,6 +17,7 @@ window.onload = () => {
             score = localStorage.getItem(x+2);
             document.getElementById("status").innerHTML = "Score: " + score;
             user_key = x;
+            x = localStorage.length;
 
         }
         else{
@@ -57,7 +58,9 @@ window.onload = () => {
             element[i].style.background = "#eeeeee";
 
         }
-        document.getElementById("status").innerHTML = "Begin by moving your mouse over the S.";
+        score = 0;
+        document.getElementById("status").innerHTML = "Score: " + score;
+        localStorage.setItem(user_key+2, score);
         status = 0;
         end = 0;
     }
@@ -106,6 +109,7 @@ window.onload = () => {
             document.getElementById("status").innerHTML = "You Win :) Score: " + score;
             end = 1;
             localStorage.setItem(user_key+2, score);
+           
         }
     }
 
