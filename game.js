@@ -10,6 +10,8 @@ window.onload = () => {
     let score = 0;
     let user_key;
 
+    // checking if the user is stored if not store it
+
     for(let x = 0; x < localStorage.length; x++){
 
         if(localStorage.getItem(x) == name && localStorage.getItem(x+1) == pass){
@@ -34,6 +36,8 @@ window.onload = () => {
     let startx = 0;
     let outbox = 0;
 
+    // starting the game
+
     document.getElementById("start").addEventListener("mousemove", start, false);
 
     function start() {
@@ -49,6 +53,8 @@ window.onload = () => {
         }
     }
 
+    // reset the game
+
     document.getElementById("start").addEventListener("click", reset);
 
     function reset() {
@@ -63,6 +69,8 @@ window.onload = () => {
         end = 0;
     }
 
+    // if user tried to cheat
+
     document.addEventListener('mousemove', (event) => {
 
 
@@ -75,6 +83,8 @@ window.onload = () => {
 
     });
 
+
+    // lose state 
 
     for (let i = 0; i < element.length; i++) {
         element[i].addEventListener("mousemove", boundarymove, false);
@@ -96,6 +106,8 @@ window.onload = () => {
         }
     }
 
+
+    // winning state
 
     document.getElementById("end").addEventListener("mousemove", endmove, false);
 
