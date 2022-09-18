@@ -5,8 +5,10 @@ window.onload = () => {
     const name = prompt("Enter your name:");
     const pass = prompt("Enter your pass:");
 
-    localStorage.setItem("Name", name);
-    localStorage.setItem("pass", pass);
+    const i = localStorage.length;
+
+    localStorage.setItem(i, name);
+    localStorage.setItem(i+1, pass);
 
     let status = 0;
     let end = 0;
