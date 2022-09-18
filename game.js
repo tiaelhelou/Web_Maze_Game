@@ -4,16 +4,19 @@ window.onload = () => {
 
     let status = 0;
     let end ;
+    let startx = 0;
+    let outbox = 0;
 
     document.getElementById("start").addEventListener("mousemove", start, false);
 
     function start() {
-
-        if(status == 0){
-            status = 1;
-            end = 0;
+        for (let i = 0; i < element.length; i++) {
+            document.getElementById("start").addEventListener('mousemove', (event) => {
+                startx = event.clientX;
+            });
         }
-       
+        status = 1;
+        end = 0;
     }
 
     document.getElementById("start").addEventListener("click", reset);
@@ -27,6 +30,18 @@ window.onload = () => {
         status = 0;
         end = 0;
     }
+
+    document.addEventListener('mousemove', (event) => {
+
+
+        outbox = event.clientX;
+        if (status == 1 && end == 0 && outbox < startx) {
+            status = 0;
+            end = 1;
+            document.getElementById("status").innerHTML = "Not Allowed! You lose :(";
+        }
+
+    });
 
 
     for (let i = 0; i < element.length; i++) {
